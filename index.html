@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Vodalone — eSIM | سافر وخليك متصل</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Cairo,Arial,sans-serif;background:#fff;color:#171717;overflow-x:hidden}
+:root{--red:#e60000;--dark:#151515;--soft:#fff3f3;--cream:#fffaf5}
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px 6%;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid #eee}
+.logo{font-size:24px;font-weight:800;color:var(--red);letter-spacing:-1px}.logo span{color:#111}
+.navlinks{display:flex;gap:28px;align-items:center}.navlinks a{color:#222;text-decoration:none;font-size:14px}.btn{border:0;border-radius:999px;background:var(--red);color:#fff;padding:13px 24px;font-family:inherit;font-weight:700;cursor:pointer;box-shadow:0 12px 25px #e6000025;transition:.25s}.btn:hover{transform:translateY(-3px);box-shadow:0 16px 30px #e6000040}
+.hero{min-height:760px;padding:150px 7% 90px;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 40%,#ffd9d9 0 12%,transparent 34%),linear-gradient(135deg,#fff 0%,#fff7f7 52%,#ffe7e7 100%)}
+.sun{position:absolute;width:360px;height:360px;border-radius:50%;background:#ffe7a8;left:-130px;top:120px;filter:blur(1px);opacity:.55}.wave{position:absolute;inset:auto -10% -120px -10%;height:280px;background:#fff;border-radius:50% 50% 0 0/80% 80% 0 0;transform:rotate(-3deg)}
+.hero-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;direction:ltr}.hero-copy{direction:rtl;position:relative;z-index:2}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid #eee;border-radius:999px;padding:8px 14px;font-size:13px;box-shadow:0 8px 25px #0000000b}.dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite}
+h1{font-size:clamp(44px,6vw,78px);line-height:1.08;margin:22px 0 18px;letter-spacing:-2px}h1 b{color:var(--red)}.lead{font-size:19px;line-height:1.9;color:#555;max-width:610px}.hero-actions{display:flex;gap:14px;align-items:center;margin-top:28px}.ghost{background:#fff;color:#222;border:1px solid #ddd;box-shadow:none}.ghost:hover{box-shadow:0 12px 25px #00000012}
+.travel-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.tag{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #eee;font-size:12px;color:#555}
+.phone-wrap{direction:rtl;position:relative;min-height:500px;display:grid;place-items:center}.phone{width:265px;height:535px;background:#111;border:8px solid #111;border-radius:42px;box-shadow:0 35px 70px #00000035;position:relative;transform:rotate(7deg);animation:float 4s ease-in-out infinite;z-index:3}.screen{position:absolute;inset:8px;border-radius:33px;overflow:hidden;background:linear-gradient(160deg,#fff,#ffe2e2)}.isymbol{position:absolute;top:105px;left:50%;transform:translateX(-50%);width:110px;height:150px;border:3px dashed var(--red);border-radius:22px;display:grid;place-items:center;background:#fff}.isymbol:after{content:'eSIM';font-size:28px;font-weight:800;color:#111}.vlogo{position:absolute;top:30px;right:25px;font-weight:800;color:var(--red);font-size:18px}.phone-bottom{position:absolute;bottom:24px;left:20px;right:20px;background:#fff;border-radius:18px;padding:12px;text-align:center;font-size:12px;box-shadow:0 10px 25px #00000012}.bubble{position:absolute;border-radius:50%;background:var(--red);color:#fff;width:72px;height:72px;display:grid;place-items:center;font-size:25px;box-shadow:0 15px 30px #e6000035;z-index:4}.b1{right:35px;top:85px}.b2{left:30px;bottom:100px}.b3{right:15px;bottom:35px}.route{position:absolute;width:440px;height:240px;border:3px solid #e6000060;border-color:#e6000060 transparent transparent transparent;border-radius:50%;transform:rotate(-20deg);animation:route 5s linear infinite}
+section{padding:90px 7%}.section-head{text-align:center;max-width:760px;margin:0 auto 45px}.kicker{color:var(--red);font-weight:800;font-size:14px}.section-head h2{font-size:42px;margin:8px 0 10px}.section-head p{color:#666;line-height:1.9}
+.cards{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{padding:28px;border:1px solid #eee;border-radius:24px;background:#fff;min-height:220px;transition:.3s;position:relative;overflow:hidden}.card:hover{transform:translateY(-9px);box-shadow:0 22px 45px #00000010;border-color:#ffd1d1}.icon{width:52px;height:52px;border-radius:16px;background:#fff0f0;display:grid;place-items:center;color:var(--red);font-size:25px;margin-bottom:20px}.card h3{margin:0 0 8px;font-size:18px}.card p{margin:0;color:#666;line-height:1.8;font-size:13px}
+.travel{background:linear-gradient(120deg,#fff5ee,#fff 50%,#fff1f1);position:relative;overflow:hidden}.travel:before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:#ffe3a8;left:-250px;top:60px;opacity:.35}.travel-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}.beach{height:420px;border-radius:35px;position:relative;overflow:hidden;background:linear-gradient(#ffcf86 0 34%,#72d0e8 35% 70%,#f4d58a 71%);box-shadow:0 25px 60px #00000015}.beach:before{content:'';position:absolute;right:55px;top:45px;width:105px;height:105px;border-radius:50%;background:#fff2ae;box-shadow:0 0 60px #fff0a0}.palm{position:absolute;left:65px;bottom:80px;font-size:110px;transform:rotate(-7deg)}.suitcase{position:absolute;right:55px;bottom:45px;font-size:75px}.travel-copy h2{font-size:45px;line-height:1.2;margin:10px 0}.travel-copy p{color:#666;line-height:1.9}.trip-list{display:grid;gap:12px;margin:25px 0}.trip{background:#fff;border:1px solid #eee;border-radius:18px;padding:15px 18px;display:flex;justify-content:space-between;align-items:center}.trip b{font-size:14px}.trip span{font-size:12px;color:#777}
+.steps{max-width:1050px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{background:#fafafa;border-radius:22px;padding:28px;text-align:center;border:1px solid #eee}.num{width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;margin:0 auto 15px;font-weight:800}
+.faq{max-width:900px;margin:auto}.faq-item{border-bottom:1px solid #eee;padding:20px 0}.faq-q{display:flex;justify-content:space-between;font-weight:700;cursor:pointer}.faq-a{max-height:0;overflow:hidden;color:#666;line-height:1.8;transition:.35s}.faq-item.open .faq-a{max-height:150px;padding-top:12px}.plus{color:var(--red);font-size:22px}
+.cta{margin:0 7% 80px;border-radius:35px;padding:55px 7%;background:linear-gradient(120deg,#c90000,#ef1d1d);color:#fff;position:relative;overflow:hidden}.cta:after{content:'✈';position:absolute;font-size:230px;left:4%;top:-55px;opacity:.08;transform:rotate(-15deg)}.cta h2{font-size:42px;margin:0 0 10px}.cta p{opacity:.9}.cta .btn{background:#fff;color:#c90000;box-shadow:none;margin-top:15px}
+footer{padding:35px 7%;background:#111;color:#fff;display:flex;justify-content:space-between;gap:20px;align-items:center}.footerlogo{color:#fff}.mini{font-size:12px;color:#aaa}
+.toast{position:fixed;bottom:25px;left:25px;background:#111;color:#fff;padding:13px 18px;border-radius:14px;transform:translateY(120px);transition:.35s;z-index:50;font-size:13px}.toast.show{transform:translateY(0)}
+@keyframes float{0%,100%{transform:rotate(7deg) translateY(0)}50%{transform:rotate(4deg) translateY(-16px)}}@keyframes pulse{50%{transform:scale(1.7);opacity:.4}}@keyframes route{to{transform:rotate(340deg)}}
+@media(max-width:850px){.navlinks{display:none}.hero{padding-top:120px}.hero-grid,.travel-grid{grid-template-columns:1fr}.phone-wrap{min-height:470px}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.travel-copy{order:-1}.section-head h2,.travel-copy h2,.cta h2{font-size:32px}footer{flex-direction:column;align-items:flex-start}}
+@media(max-width:520px){.cards{grid-template-columns:1fr}.hero{padding-left:5%;padding-right:5%}section{padding-left:5%;padding-right:5%}.cta{margin-left:5%;margin-right:5%}.phone{width:230px;height:470px}.bubble{width:58px;height:58px}.hero-actions{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="logo">Vodalone <span>eSIM</span></div>
+  <div class="navlinks">
+    <a href="#benefits">المميزات</a><a href="#travel">للسفر</a><a href="#how">طريقة التفعيل</a><a href="#faq">الأسئلة الشائعة</a>
+  </div>
+  <button class="btn" onclick="scrollToId('cta')">اطلب eSIM الآن</button>
+</nav>
+
+<header class="hero">
+  <div class="sun"></div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span> اتصال رقمي جاهز لرحلتك</div>
+      <h1>سافر أكتر…<br><b>وخليك متصل.</b></h1>
+      <p class="lead">Vodalone هو تجربة رقمية لـ eSIM من ڤودافون — شريحة إلكترونية داخل موبايلك، من غير شريحة بلاستيك، عشان تبدأ أسرع وتتحرك براحتك.</p>
+      <div class="hero-actions">
+        <button class="btn" onclick="showToast('هنا يمكن ربط زر الطلب بصفحة الشراء أو الـ eShop')">ابدأ بـ eSIM</button>
+        <button class="btn ghost" onclick="scrollToId('how')">اعرف إزاي بتشتغل</button>
+      </div>
+      <div class="travel-tags"><span class="tag">✈️ Travel ready</span><span class="tag">☀️ Summer vibes</span><span class="tag">📱 Digital SIM</span><span class="tag">🌍 Stay connected</span></div>
+    </div>
+    <div class="phone-wrap">
+      <div class="route"></div><div class="bubble b1">✈</div><div class="bubble b2">🌍</div><div class="bubble b3">⌁</div>
+      <div class="phone"><div class="screen"><div class="vlogo">vodafone</div><div class="isymbol"></div><div class="phone-bottom">eSIM مفعّلة<br><b>أنت متصل الآن ✓</b></div></div></div>
+    </div>
+  </div>
+  <div class="wave"></div>
+</header>
+
+<section id="benefits">
+  <div class="section-head"><div class="kicker">WHY eSIM?</div><h2>مميزات تخلي اتصالك أسهل</h2><p>كل اللي محتاجه عشان تستخدم خطك بطريقة رقمية وأبسط — مع تجربة مصممة للناس اللي دايمًا على الطريق.</p></div>
+  <div class="cards">
+    <div class="card"><div class="icon">⚡</div><h3>تفعيل رقمي</h3><p>تفعيل eSIM عن طريق QR Code بعد التأكد من توافق جهازك واتصالك بالـ Wi‑Fi.</p></div>
+    <div class="card"><div class="icon">📱</div><h3>من غير شريحة بلاستيك</h3><p>الشريحة مدمجة داخل الهاتف، فمش محتاج تشيل أو تركب شريحة فعلية.</p></div>
+    <div class="card"><div class="icon">⇄</div><h3>SIM + eSIM</h3><p>في الأجهزة المتوافقة، تقدر تستخدم الشريحة الفعلية والـ eSIM معًا.</p></div>
+    <div class="card"><div class="icon">🌱</div><h3>تجربة رقمية</h3><p>حل رقمي سريع وسهل الاستخدام ومناسب لأسلوب حياة متحرك.</p></div>
+  </div>
+</section>
+
+<section id="travel" class="travel">
+  <div class="travel-grid">
+    <div class="beach"><div class="palm">🌴</div><div class="suitcase">🧳</div></div>
+    <div class="travel-copy">
+      <div class="kicker">SUMMER MODE: ON</div><h2>المطار، البحر،<br><span style="color:var(--red)">وأنت Online.</span></h2>
+      <p>خلي تجربة السفر أسهل: موبايلك جاهز، خطك معاك، ومفيش لحظة محتاجة منك تبدّل شريحة بإيدك. دي مساحة إبداعية للحملة، ويمكن إضافة عروض التجوال الرسمية هنا حسب الباقة والبلد.</p>
+      <div class="trip-list"><div class="trip"><b>✈️ قبل السفر</b><span>تأكد من توافق جهازك</span></div><div class="trip"><b>📲 عند التفعيل</b><span>Wi‑Fi + QR Code</span></div><div class="trip"><b>🌊 في المصيف</b><span>Stay connected</span></div></div>
+      <button class="btn" onclick="scrollToId('cta')">خلي eSIM معاك في الرحلة</button>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-head"><div class="kicker">HOW IT WORKS</div><h2>3 خطوات وتكون جاهز</h2><p>الخطوات التالية مبنية على إرشادات ڤودافون الرسمية لتفعيل eSIM.</p></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>تأكد من جهازك</h3><p>تأكد إن جهازك بيدعم eSIM وإنه متصل بالـ Wi‑Fi.</p></div>
+    <div class="step"><div class="num">2</div><h3>افتح إعدادات الشريحة</h3><p>iPhone: Settings → Cellular → Add eSIM. Android: Settings → Connections → SIM Manager → Add eSIM.</p></div>
+    <div class="step"><div class="num">3</div><h3>امسح QR Code</h3><p>اختار Use/Scan QR Code وامسح الكود. كود QR صالح لمدة 5 أيام وفقًا لإرشادات ڤودافون.</p></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="section-head"><div class="kicker">FAQ</div><h2>لسه عندك سؤال؟</h2><p>إجابات مختصرة تساعد العميل يفهم الخدمة قبل ما يطلبها.</p></div>
+  <div class="faq">
+    <div class="faq-item"><div class="faq-q">يعني إيه eSIM؟ <span class="plus">+</span></div><div class="faq-a">هي شريحة إلكترونية مدمجة داخل الهاتف بدل الشريحة البلاستيك التقليدية.</div></div>
+    <div class="faq-item"><div class="faq-q">هل كل الموبايلات بتدعمها؟ <span class="plus">+</span></div><div class="faq-a">لا، لازم تتأكد إن جهازك من الأجهزة المتوافقة مع eSIM قبل الشراء أو التفعيل.</div></div>
+    <div class="faq-item"><div class="faq-q">أقدر أستخدم SIM عادية مع eSIM؟ <span class="plus">+</span></div><div class="faq-a">نعم، ڤودافون توضح إمكانية استخدام physical SIM وeSIM معًا على الأجهزة المتوافقة.</div></div>
+    <div class="faq-item"><div class="faq-q">أشتري eSIM منين؟ <span class="plus">+</span></div><div class="faq-a">وفقًا لڤودافون، يمكن شراء eSIM من الفروع أو من الـ eShop.</div></div>
+  </div>
+</section>
+
+<div id="cta" class="cta">
+  <h2>Ready for your next trip?</h2>
+  <p>خليك متصل من أول لحظة… وخلي eSIM جزء من شنطة سفرك الرقمية.</p>
+  <button class="btn" onclick="showToast('زر تجريبي — اربطيه بصفحة الطلب عند تنفيذ المشروع')">اطلب eSIM الآن ✈️</button>
+</div>
+
+<footer><div class="logo footerlogo">Vodalone <span>eSIM</span></div><div class="mini">Concept landing page for a marketing project • Vodafone eSIM service concept</div></footer>
+<div id="toast" class="toast"></div>
+
+<script>
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function showToast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),3000)}
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.animate([{opacity:0,transform:'translateY(24px)'},{opacity:1,transform:'translateY(0)'}],{duration:650,easing:'cubic-bezier(.2,.8,.2,1)',fill:'forwards'})}}),{threshold:.12});
+document.querySelectorAll('.card,.step,.travel-copy,.beach,.faq-item').forEach(x=>{x.style.opacity=0;io.observe(x)});
+</script>
+</body>
+</html>
